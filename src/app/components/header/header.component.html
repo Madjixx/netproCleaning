@@ -20,7 +20,7 @@
             [value]="translationService.currentLanguage()"
             (change)="setLanguage($any($event.target).value)">
             @for (lang of languages; track lang.code) {
-              <option [value]="lang.code"><img src="assets/{{ lang.flag }}.jpg" alt=""> {{ lang.label }}</option>
+              <option [value]="lang.code"><img [src]="'assets/' + lang.code + '.jpg'" alt="{{ lang.label }}"> {{ lang.label }}</option>
             }
           </select>
         </div>
