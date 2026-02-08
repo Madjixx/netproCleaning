@@ -39,14 +39,14 @@ export class ServicesComponent {
       id: 3,
       titleKey: 'service3.title',
       descKey: 'service3.desc',
-      image: 'https://images.pexels.com/photos/5691622/pexels-photo-5691622.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'assets/fin-chantier.jpeg',
       color: '#1DA1F2'
     },
     {
       id: 4,
       titleKey: 'service4.title',
       descKey: 'service4.desc',
-      image: 'https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'assets/residence.jpeg',
       color: '#2E8B57'
     }
   ];
