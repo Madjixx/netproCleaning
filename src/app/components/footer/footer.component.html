@@ -17,11 +17,28 @@
         <a href="#contact">{{ translationService.t('nav.contact') }}</a>
       </div>
 
+      <div class="footer-services">
+        <h4>{{ translationService.currentLanguage() === 'fr' ? 'Services' : translationService.currentLanguage() === 'en' ? 'Services' : 'Diensten' }}</h4>
+        <p>{{ translationService.currentLanguage() === 'fr' ? 'Nettoyage de résidence' : translationService.currentLanguage() === 'en' ? 'Residence cleaning' : 'Residentiële reiniging' }}</p>
+        <p>{{ translationService.currentLanguage() === 'fr' ? 'Nettoyage fin de chantier' : translationService.currentLanguage() === 'en' ? 'Post-construction cleaning' : 'Reiniging na bouw' }}</p>
+        <p>{{ translationService.currentLanguage() === 'fr' ? 'Nettoyage commerce & établissement' : translationService.currentLanguage() === 'en' ? 'Commercial cleaning' : 'Commerciële reiniging' }}</p>
+        <p>{{ translationService.currentLanguage() === 'fr' ? 'Nettoyage entreprise & bureau' : translationService.currentLanguage() === 'en' ? 'Office cleaning' : 'Kantoor reiniging' }}</p>
+      </div>
+
       <div class="footer-contact">
         <h4>Contact</h4>
-        <p>0477 20 99 89</p>
-        <p>contact&#64;netprocleaning.be</p>
-        <p>Rue Pollepelstraat 25 3300 Tienen, Belgique</p>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span>
+          <p>0477 20 99 89</p>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">✉️</span>
+          <p>contact&#64;netprocleaning.be</p>
+        </div>
+        <div class="contact-item">
+          <span class="contact-icon">📍</span>
+          <p>Rue Pollepelstraat 25 3300 Tienen, Belgique</p>
+        </div>
       </div>
     </div>
 
