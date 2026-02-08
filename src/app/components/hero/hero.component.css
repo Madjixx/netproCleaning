@@ -13,7 +13,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, #1DA1F2 0%, #2E8B57 100%);
+  background: #1DA1F2;
   z-index: 0;
 }
 
@@ -23,7 +23,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, rgba(29, 161, 242, 0.9) 0%, rgba(46, 139, 87, 0.85) 100%);
+  background: rgba(29, 161, 242, 0.9);
 }
 
 .container {

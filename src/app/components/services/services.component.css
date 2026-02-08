@@ -24,7 +24,7 @@
 .title-underline {
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #1DA1F2, #2E8B57);
+  background: #1DA1F2;
   margin: 0 auto;
   border-radius: 2px;
 }
@@ -72,7 +72,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(180deg, transparent 0%, rgba(29, 161, 242, 0.3) 100%);
+  background: rgba(29, 161, 242, 0.2);
   transition: opacity 0.3s ease;
 }
 

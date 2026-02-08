@@ -52,7 +52,7 @@
 .title-underline {
   width: 80px;
   height: 4px;
-  background: linear-gradient(90deg, #1DA1F2, #2E8B57);
+  background: #1DA1F2;
   margin-bottom: 2rem;
   border-radius: 2px;
 }
@@ -81,7 +81,7 @@
 
 .stat-item:hover {
   transform: translateY(-5px);
-  background: linear-gradient(135deg, #1DA1F2, #2E8B57);
+  background: #1DA1F2;
 }
 
 .stat-item:hover .stat-number,
