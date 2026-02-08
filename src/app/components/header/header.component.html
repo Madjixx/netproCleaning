@@ -15,14 +15,25 @@
 
       <div class="header-actions">
         <div class="language-selector">
-          <select
-            class="lang-select"
-            [value]="translationService.currentLanguage()"
-            (change)="setLanguage($any($event.target).value)">
-            @for (lang of languages; track lang.code) {
-              <option [value]="lang.code"><img [src]="'assets/' + lang.code + '.jpg'" alt="{{ lang.label }}"> {{ lang.label }}</option>
-            }
-          </select>
+          <button class="lang-current" (click)="toggleLangDropdown()">
+            <img [src]="getFlagImage(translationService.currentLanguage())" [alt]="translationService.currentLanguage()" class="flag-icon">
+            <span class="lang-code">{{ translationService.currentLanguage().toUpperCase() }}</span>
+            <span class="arrow">▼</span>
+          </button>
+
+          @if (langDropdownOpen) {
+            <div class="lang-dropdown">
+              @for (lang of languages; track lang.code) {
+                <button
+                  class="lang-option"
+                  [class.active]="lang.code === translationService.currentLanguage()"
+                  (click)="setLanguage(lang.code)">
+                  <img [src]="getFlagImage(lang.code)" [alt]="lang.label" class="flag-icon">
+                  <span>{{ lang.label }}</span>
+                </button>
+              }
+            </div>
+          }
         </div>
 
         <button class="mobile-menu-btn" (click)="toggleMobileMenu()">

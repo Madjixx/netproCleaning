@@ -12,19 +12,29 @@ import { TranslationService, Language } from '../../services/translation.service
 export class HeaderComponent {
   translationService = inject(TranslationService);
   mobileMenuOpen = false;
+  langDropdownOpen = false;
 
-  languages: { code: Language; label: string; flag: string }[] = [
-    { code: 'fr', label: 'Français', flag: '🇫🇷' },
-    { code: 'en', label: 'English', flag: '🇬🇧' },
-    { code: 'nl', label: 'Nederlands', flag: '🇳🇱' }
+  languages: { code: Language; label: string }[] = [
+    { code: 'fr', label: 'Français' },
+    { code: 'en', label: 'English' },
+    { code: 'nl', label: 'Nederlands' }
   ];
 
   toggleMobileMenu() {
     this.mobileMenuOpen = !this.mobileMenuOpen;
   }
 
+  toggleLangDropdown() {
+    this.langDropdownOpen = !this.langDropdownOpen;
+  }
+
   setLanguage(lang: Language) {
     this.translationService.setLanguage(lang);
+    this.langDropdownOpen = false;
+  }
+
+  getFlagImage(code: Language): string {
+    return `/assets/${code}.jpg`;
   }
 
   scrollToSection(sectionId: string) {
