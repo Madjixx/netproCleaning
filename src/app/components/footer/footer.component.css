@@ -20,13 +20,11 @@
 .footer-logo .logo-desktop {
   height: 60px;
   display: block;
-  filter: brightness(0) invert(1);
 }
 
 .footer-logo .logo-mobile {
   height: 50px;
   display: none;
-  filter: brightness(0) invert(1);
 }
 
 .company-name {
