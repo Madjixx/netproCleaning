@@ -1,0 +1,45 @@
+<header class="header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <img src="assets/logo.png" alt="NetPro Cleaning" class="logo-desktop">
+        <img src="assets/logo2.png" alt="NetPro Cleaning" class="logo-mobile">
+      </div>
+
+      <nav class="nav-desktop">
+        <a (click)="scrollToSection('home')" class="nav-link">{{ translationService.t('nav.home') }}</a>
+        <a (click)="scrollToSection('about')" class="nav-link">{{ translationService.t('nav.about') }}</a>
+        <a (click)="scrollToSection('services')" class="nav-link">{{ translationService.t('nav.services') }}</a>
+        <a (click)="scrollToSection('contact')" class="nav-link">{{ translationService.t('nav.contact') }}</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="language-selector">
+          <select
+            class="lang-select"
+            [value]="translationService.currentLanguage()"
+            (change)="setLanguage($any($event.target).value)">
+            @for (lang of languages; track lang.code) {
+              <option [value]="lang.code">{{ lang.flag }} {{ lang.label }}</option>
+            }
+          </select>
+        </div>
+
+        <button class="mobile-menu-btn" (click)="toggleMobileMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+
+    @if (mobileMenuOpen) {
+      <nav class="nav-mobile">
+        <a (click)="scrollToSection('home')" class="nav-link">{{ translationService.t('nav.home') }}</a>
+        <a (click)="scrollToSection('about')" class="nav-link">{{ translationService.t('nav.about') }}</a>
+        <a (click)="scrollToSection('services')" class="nav-link">{{ translationService.t('nav.services') }}</a>
+        <a (click)="scrollToSection('contact')" class="nav-link">{{ translationService.t('nav.contact') }}</a>
+      </nav>
+    }
+  </div>
+</header>

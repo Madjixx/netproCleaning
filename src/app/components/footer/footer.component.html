@@ -1,0 +1,32 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="assets/logo.png" alt="NetPro Cleaning">
+        <p class="footer-tagline">
+          {{ translationService.currentLanguage() === 'fr' ? 'Nettoyage professionnel' : translationService.currentLanguage() === 'en' ? 'Professional cleaning' : 'Professionele reiniging' }}
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <h4>{{ translationService.currentLanguage() === 'fr' ? 'Navigation' : translationService.currentLanguage() === 'en' ? 'Navigation' : 'Navigatie' }}</h4>
+        <a href="#home">{{ translationService.t('nav.home') }}</a>
+        <a href="#about">{{ translationService.t('nav.about') }}</a>
+        <a href="#services">{{ translationService.t('nav.services') }}</a>
+        <a href="#contact">{{ translationService.t('nav.contact') }}</a>
+      </div>
+
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p>0477 20 99 89</p>
+        <p>contact&#64;netprocleaning.be</p>
+        <p>Rue Pollepelstraat 25 3300 Tienen, Belgique</p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>{{ translationService.t('footer.legal') }}</p>
+      <p>&copy; {{ currentYear }} NetPro Cleaning. {{ translationService.t('footer.rights') }}</p>
+    </div>
+  </div>
+</footer>

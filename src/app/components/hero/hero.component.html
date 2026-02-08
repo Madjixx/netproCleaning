@@ -1,0 +1,31 @@
+<section id="home" class="hero">
+  <div class="hero-background">
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-text">
+        <h1 class="hero-title">
+          {{ translationService.t('hero.title') }}
+        </h1>
+        <p class="hero-subtitle">
+          {{ translationService.t('hero.subtitle') }}
+        </p>
+        <button class="cta-button" (click)="scrollToContact()">
+          {{ translationService.t('hero.cta') }}
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.pexels.com/photos/4239091/pexels-photo-4239091.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Professional Cleaning">
+      </div>
+    </div>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="mouse"></div>
+  </div>
+</section>

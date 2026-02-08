@@ -1,0 +1,38 @@
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-image">
+        <img src="assets/logo2.png" alt="NetPro Cleaning Logo">
+        <div class="image-decoration"></div>
+      </div>
+
+      <div class="about-text">
+        <h2 class="section-title">{{ translationService.t('about.title') }}</h2>
+        <div class="title-underline"></div>
+
+        <p class="about-paragraph">
+          {{ translationService.t('about.text1') }}
+        </p>
+
+        <p class="about-paragraph">
+          {{ translationService.t('about.text2') }}
+        </p>
+
+        <div class="about-stats">
+          <div class="stat-item">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">{{ translationService.currentLanguage() === 'fr' ? 'Service disponible' : translationService.currentLanguage() === 'en' ? 'Service available' : 'Service beschikbaar' }}</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">{{ translationService.currentLanguage() === 'fr' ? 'Équipe qualifiée' : translationService.currentLanguage() === 'en' ? 'Qualified team' : 'Gekwalificeerd team' }}</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">{{ translationService.currentLanguage() === 'fr' ? 'Qualité garantie' : translationService.currentLanguage() === 'en' ? 'Quality guaranteed' : 'Kwaliteit gegarandeerd' }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
