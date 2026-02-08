@@ -2,8 +2,8 @@
   <div class="container">
     <div class="header-content">
       <div class="logo">
-        <img src="/assets/logo.png" alt="NetPro Cleaning" class="logo-desktop">
-        <img src="/assets/logo2.png" alt="NetPro Cleaning" class="logo-mobile">
+        <img src="assets/logo.png" alt="NetPro Cleaning" class="logo-desktop">
+        <img src="assets/logo2.png" alt="NetPro Cleaning" class="logo-mobile">
       </div>
 
       <nav class="nav-desktop">
@@ -20,7 +20,7 @@
             [value]="translationService.currentLanguage()"
             (change)="setLanguage($any($event.target).value)">
             @for (lang of languages; track lang.code) {
-              <option [value]="lang.code"><img [src]="'/assets/' + lang.code + '.jpg'" alt="{{ lang.label }}"> {{ lang.label }}</option>
+              <option [value]="lang.code"><img [src]="'assets/' + lang.code + '.jpg'" alt="{{ lang.label }}"> {{ lang.label }}</option>
             }
           </select>
         </div>
