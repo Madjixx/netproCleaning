@@ -44,6 +44,9 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            "buildTarget": "netproCleaning:build"
+          },
           "configurations": {
             "development": {
               "buildTarget": "netproCleaning:build:development"
