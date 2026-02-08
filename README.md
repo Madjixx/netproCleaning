@@ -1,5 +1,11 @@
 netproCleaning
 
+Site web professionnel pour NetPro Cleaning - Service de nettoyage haute précision en Belgique.
+
+## Configuration de l'envoi d'emails
+
+Pour configurer l'envoi d'emails depuis le formulaire de contact, consultez le guide détaillé: [EMAIL_SETUP.md](./EMAIL_SETUP.md)
+
 ## Déploiement sur GitHub Pages
 
 ### Configuration initiale
