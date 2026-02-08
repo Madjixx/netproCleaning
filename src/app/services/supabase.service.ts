@@ -14,17 +14,25 @@ export interface QuoteRequest {
   providedIn: 'root'
 })
 export class SupabaseService {
-  private supabase: SupabaseClient;
+  private supabase: SupabaseClient | null = null;
 
-  constructor() {
-    this.supabase = createClient(
-      'https://uiujifxknbregvvwsizz.supabase.co',
-      'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVpdWppZnhrbmJyZWd2dndzaXp6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA1NTU3OTgsImV4cCI6MjA4NjEzMTc5OH0.Smuuy8EbLFiaX9GYnoEuiy9bf2WTEE-PZQmvyjWY05w'
-    );
+  private getClient(): SupabaseClient {
+    if (!this.supabase) {
+      this.supabase = createClient(
+        'https://uiujifxknbregvvwsizz.supabase.co',
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVpdWppZnhrbmJyZWd2dndzaXp6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA1NTU3OTgsImV4cCI6MjA4NjEzMTc5OH0.Smuuy8EbLFiaX9GYnoEuiy9bf2WTEE-PZQmvyjWY05w',
+        {
+          auth: {
+            persistSession: false
+          }
+        }
+      );
+    }
+    return this.supabase;
   }
 
   async submitQuoteRequest(quoteData: QuoteRequest) {
-    const { data, error } = await this.supabase
+    const { data, error } = await this.getClient()
       .from('quote_requests')
       .insert([quoteData])
       .select()
