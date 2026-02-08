@@ -34,7 +34,7 @@ export class HeaderComponent {
   }
 
   getFlagImage(code: Language): string {
-    return `/assets/${code}.jpg`;
+    return `assets/${code}.jpg`;
   }
 
   scrollToSection(sectionId: string) {
