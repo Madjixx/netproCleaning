@@ -9,7 +9,7 @@
       @for (value of values; track value.id) {
         <div class="value-card">
           <div class="value-icon">
-            <div class="icon-circle">
+            <div class="icon-circle" [style.background-color]="value.color">
               @if (value.id === 1) {
                 <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
@@ -31,7 +31,7 @@
               }
             </div>
           </div>
-          <h3 class="value-title">{{ translationService.t(value.titleKey) }}</h3>
+          <h3 class="value-title" [style.color]="value.color">{{ translationService.t(value.titleKey) }}</h3>
           <p class="value-description">{{ translationService.t(value.descKey) }}</p>
         </div>
       }
