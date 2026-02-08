@@ -32,7 +32,7 @@ export class ServicesComponent {
       id: 2,
       titleKey: 'service2.title',
       descKey: 'service2.desc',
-      image: '/assets/commerce_&_etablissement.jpg',
+      image: '/assets/commerce_and_etablissement.jpg',
       color: '#2E8B57'
     },
     {
