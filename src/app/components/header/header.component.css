@@ -66,7 +66,7 @@ nav a::after {
   left: 0;
   width: 0;
   height: 2px;
-  background: linear-gradient(90deg, #1DA1F2, #1F9D55);
+  background: #1DA1F2;
   transition: width 0.3s ease;
 }
 
