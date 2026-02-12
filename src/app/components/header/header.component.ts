@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 export class HeaderComponent {
   isScrolled = false;
   isMobileMenuOpen = false;
-  logoSrc = 'assets/logo-netpro.png';
+  logoSrc = 'assets/logo.png';
 
   constructor() {
     if (typeof window !== 'undefined') {
@@ -31,7 +31,7 @@ export class HeaderComponent {
 
   updateLogo() {
     if (typeof window !== 'undefined') {
-      this.logoSrc = window.innerWidth < 768 ? 'assets/logo.png' : 'assets/logo-netpro.png';
+      this.logoSrc = window.innerWidth < 768 ? 'assets/logo2.png' : 'assets/logo.png';
     }
   }
 
