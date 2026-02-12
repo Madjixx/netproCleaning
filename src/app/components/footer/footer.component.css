@@ -30,7 +30,7 @@
 .company-name {
   font-size: 1.4rem;
   font-weight: 700;
-  color: #1DA1F2;
+  color: #1F9D55;
   margin: 1rem 0 0.5rem;
 }
 
@@ -46,7 +46,7 @@
   font-size: 1.2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
-  color: #1DA1F2;
+  color: #1F9D55;
 }
 
 .footer-links a {
@@ -59,7 +59,7 @@
 }
 
 .footer-links a:hover {
-  color: #1DA1F2;
+  color: #1F9D55;
   transform: translateX(5px);
 }
 

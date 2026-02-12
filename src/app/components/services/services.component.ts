@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
 export class ServicesComponent {
   services = [
     {
-      title: 'Entreprise & Bureaux',
+      title: 'Entreprises & Bureaux',
       description: 'Entretien de sièges sociaux, bureaux, immeubles et espaces de coworking.',
       image: 'assets/service-entreprise.jpg',
       icon: '<path d="M3 3h7v7H3V3zm0 11h7v7H3v-7zm11-11h7v7h-7V3zm0 11h7v7h-7v-7z" fill="currentColor"/>'
