@@ -24,8 +24,8 @@ import { FooterComponent } from './components/footer/footer.component';
     <main>
       <app-hero />
       <app-services />
+       <app-values />
       <app-about />
-      <app-values />
       <app-contact />
     </main>
     <app-footer />
