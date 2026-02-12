@@ -1,56 +1,28 @@
-<header class="header">
+<header [class.scrolled]="isScrolled">
   <div class="container">
-    <div class="header-content">
-      <div class="logo">
-        <img src="assets/logo.png" alt="NetPro Cleaning" class="logo-desktop">
-        <img src="assets/logo2.png" alt="NetPro Cleaning" class="logo-mobile">
-      </div>
-
-      <nav class="nav-desktop">
-        <a (click)="scrollToSection('home')" class="nav-link">{{ translationService.t('nav.home') }}</a>
-        <a (click)="scrollToSection('about')" class="nav-link">{{ translationService.t('nav.about') }}</a>
-        <a (click)="scrollToSection('services')" class="nav-link">{{ translationService.t('nav.services') }}</a>
-        <a (click)="scrollToSection('contact')" class="nav-link">{{ translationService.t('nav.contact') }}</a>
-      </nav>
-
-      <div class="header-actions">
-        <div class="language-selector">
-          <button class="lang-current" (click)="toggleLangDropdown()">
-            <img [src]="getFlagImage(translationService.currentLanguage())" [alt]="translationService.currentLanguage()" class="flag-icon">
-            <span class="lang-code">{{ translationService.currentLanguage().toUpperCase() }}</span>
-            <span class="arrow">▼</span>
-          </button>
-
-          @if (langDropdownOpen) {
-            <div class="lang-dropdown">
-              @for (lang of languages; track lang.code) {
-                <button
-                  class="lang-option"
-                  [class.active]="lang.code === translationService.currentLanguage()"
-                  (click)="setLanguage(lang.code)">
-                  <img [src]="getFlagImage(lang.code)" [alt]="lang.label" class="flag-icon">
-                  <span>{{ lang.label }}</span>
-                </button>
-              }
-            </div>
-          }
-        </div>
-
-        <button class="mobile-menu-btn" (click)="toggleMobileMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+    <div class="logo">
+      <img [src]="logoSrc" alt="NetPro Cleaning" (error)="onImageError()" loading="eager">
     </div>
 
-    @if (mobileMenuOpen) {
-      <nav class="nav-mobile">
-        <a (click)="scrollToSection('home')" class="nav-link">{{ translationService.t('nav.home') }}</a>
-        <a (click)="scrollToSection('about')" class="nav-link">{{ translationService.t('nav.about') }}</a>
-        <a (click)="scrollToSection('services')" class="nav-link">{{ translationService.t('nav.services') }}</a>
-        <a (click)="scrollToSection('contact')" class="nav-link">{{ translationService.t('nav.contact') }}</a>
-      </nav>
-    }
+    <button class="mobile-menu-btn" (click)="toggleMobileMenu()" [class.open]="isMobileMenuOpen">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav [class.mobile-open]="isMobileMenuOpen">
+      <a (click)="scrollToSection('accueil')">Accueil</a>
+      <a (click)="scrollToSection('services')">Services</a>
+      <a (click)="scrollToSection('about')">À propos</a>
+      <a (click)="scrollToSection('valeurs')">Valeurs</a>
+      <a (click)="scrollToSection('contact')">Contact</a>
+    </nav>
+
+    <a href="tel:0477209989" class="phone-btn">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      0477 20 99 89
+    </a>
   </div>
 </header>
