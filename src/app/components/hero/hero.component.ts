@@ -1,21 +1,16 @@
-import { Component, inject } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { TranslationService } from '../../services/translation.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-hero',
-  standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './hero.component.html',
-  styleUrl: './hero.component.css'
+  styleUrls: ['./hero.component.css']
 })
 export class HeroComponent {
-  translationService = inject(TranslationService);
-
   scrollToContact() {
     const element = document.getElementById('contact');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 }
