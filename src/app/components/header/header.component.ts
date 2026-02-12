@@ -1,47 +1,57 @@
-import { Component, inject } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { TranslationService, Language } from '../../services/translation.service';
 
 @Component({
   selector: 'app-header',
-  standalone: true,
   imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  translationService = inject(TranslationService);
-  mobileMenuOpen = false;
-  langDropdownOpen = false;
+  isScrolled = false;
+  isMobileMenuOpen = false;
+  logoSrc = 'assets/logo-netpro.png';
 
-  languages: { code: Language; label: string }[] = [
-    { code: 'fr', label: 'Français' },
-    { code: 'en', label: 'English' },
-    { code: 'nl', label: 'Nederlands' }
-  ];
-
-  toggleMobileMenu() {
-    this.mobileMenuOpen = !this.mobileMenuOpen;
+  constructor() {
+    if (typeof window !== 'undefined') {
+      this.updateLogo();
+    }
+    console.log('Header component initialized with logo:', this.logoSrc);
   }
 
-  toggleLangDropdown() {
-    this.langDropdownOpen = !this.langDropdownOpen;
+  @HostListener('window:scroll')
+  onWindowScroll() {
+    this.isScrolled = window.scrollY > 50;
   }
 
-  setLanguage(lang: Language) {
-    this.translationService.setLanguage(lang);
-    this.langDropdownOpen = false;
+  @HostListener('window:resize')
+  onWindowResize() {
+    this.updateLogo();
   }
 
-  getFlagImage(code: Language): string {
-    return `assets/${code}.jpg`;
+  updateLogo() {
+    if (typeof window !== 'undefined') {
+      this.logoSrc = window.innerWidth < 768 ? 'assets/logo.png' : 'assets/logo-netpro.png';
+    }
+  }
+
+  onImageError(event?: any) {
+    console.error('Logo failed to load:', this.logoSrc);
+    if (event) {
+      console.error('Image error event:', event);
+    }
+    this.logoSrc = 'assets/logo2.png';
   }
 
   scrollToSection(sectionId: string) {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      this.mobileMenuOpen = false;
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      this.isMobileMenuOpen = false;
     }
+  }
+
+  toggleMobileMenu() {
+    this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 }
