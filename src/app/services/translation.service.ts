@@ -163,9 +163,9 @@ export class TranslationService {
       nl: 'Neem contact op'
     },
     'footer.legal': {
-      fr: 'NetPro Cleaning',
-      en: 'NetPro Cleaning',
-      nl: 'NetPro Cleaning'
+      fr: 'Bruxelles, Belgique',
+      en: 'Brussels, Belgium',
+      nl: 'Brussel, België'
     },
     'footer.rights': {
       fr: 'Tous droits réservés',
