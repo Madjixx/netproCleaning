@@ -155,7 +155,7 @@ Deno.serve(async (req: Request) => {
   try {
     const quoteData: QuoteRequest = await req.json();
 
-    const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
+    const RESEND_API_KEY = Deno.env.get("netprocleaning_resend_api_key");
 
     if (!RESEND_API_KEY) {
       throw new Error("RESEND_API_KEY is not configured");
@@ -165,7 +165,7 @@ Deno.serve(async (req: Request) => {
 
     const emailData = {
       from: "NetPro Cleaning <onboarding@resend.dev>",
-      to: ["contact@netprocleaning.be"],
+      to: ["niang.madjiguene94@gmail.com"],
       subject: `Nouvelle demande de devis - ${getServiceTypeLabel(quoteData.service_type)} - ${quoteData.name}`,
       html: emailHTML,
       reply_to: quoteData.email
