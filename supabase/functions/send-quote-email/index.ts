@@ -155,7 +155,7 @@ Deno.serve(async (req: Request) => {
   try {
     const quoteData: QuoteRequest = await req.json();
 
-    const RESEND_API_KEY = Deno.env.get("netprocleaning_resend_api_key");
+    const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 
     if (!RESEND_API_KEY) {
       throw new Error("RESEND_API_KEY is not configured");
