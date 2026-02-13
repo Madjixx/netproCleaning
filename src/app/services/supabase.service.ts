@@ -17,8 +17,8 @@ export class SupabaseService {
   private supabase: SupabaseClient | null = null;
 
   // Configuration Supabase
-  private readonly SUPABASE_URL = 'https://uiujifxknbregvvwsizz.supabase.co';
-  private readonly SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVpdWppZnhrbmJyZWd2dndzaXp6Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA1NTU3OTgsImV4cCI6MjA4NjEzMTc5OH0.Smuuy8EbLFiaX9GYnoEuiy9bf2WTEE-PZQmvyjWY05w';
+  private readonly SUPABASE_URL = 'https://dqgxtfxwcuckvkmohfvl.supabase.co';
+  private readonly SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRxZ3h0Znh3Y3Vja3ZrbW9oZnZsIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA5NTYwMjEsImV4cCI6MjA4NjUzMjAyMX0.rfJt1VdpNvVkHFi9OZenxSVXYffeQLz4dFhk-dy7Kro';
 
   private getClient(): SupabaseClient {
     if (!this.supabase) {
