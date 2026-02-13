@@ -5,8 +5,7 @@
     </div>
 
     <div class="services-grid">
-      <div class="service-card" *ngFor="let service of services; let i = index"
-           [style.animation-delay]="i * 0.1 + 's'">
+      <div class="service-card" *ngFor="let service of services">
         <div class="service-image">
           <img [src]="service.image" [alt]="service.title">
           <div class="service-overlay"></div>
