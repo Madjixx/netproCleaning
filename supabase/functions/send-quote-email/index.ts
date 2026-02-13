@@ -1,4 +1,5 @@
 import "jsr:@supabase/functions-js/edge-runtime.d.ts";
+import { createClient } from 'jsr:@supabase/supabase-js@2';
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -144,7 +145,31 @@ const createEmailHTML = (quote: QuoteRequest): string => {
   `.trim();
 };
 
+// Fonction pour extraire l'IP du client
+const getClientIP = (req: Request): string => {
+  // Essayer différents headers utilisés par les proxies
+  const xForwardedFor = req.headers.get('x-forwarded-for');
+  const xRealIp = req.headers.get('x-real-ip');
+  const cfConnectingIp = req.headers.get('cf-connecting-ip'); // Cloudflare
+  
+  if (xForwardedFor) {
+    // x-forwarded-for peut contenir plusieurs IPs, prendre la première
+    return xForwardedFor.split(',')[0].trim();
+  }
+  
+  if (xRealIp) {
+    return xRealIp;
+  }
+  
+  if (cfConnectingIp) {
+    return cfConnectingIp;
+  }
+  
+  return 'unknown';
+};
+
 Deno.serve(async (req: Request) => {
+  // Handle CORS preflight
   if (req.method === "OPTIONS") {
     return new Response(null, {
       status: 200,
@@ -155,10 +180,125 @@ Deno.serve(async (req: Request) => {
   try {
     const quoteData: QuoteRequest = await req.json();
 
+    // Validation des données
+    if (!quoteData.name || !quoteData.email || !quoteData.phone || 
+        !quoteData.service_type || !quoteData.address) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: "Missing required fields",
+        }),
+        {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          status: 400,
+        }
+      );
+    }
+
+    // Validation de l'email
+    const emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+    if (!emailRegex.test(quoteData.email)) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: "Invalid email format",
+        }),
+        {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          status: 400,
+        }
+      );
+    }
+
+    // Validation du service_type
+    const validServiceTypes = ['end_construction', 'residence', 'office', 'commercial'];
+    if (!validServiceTypes.includes(quoteData.service_type)) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: "Invalid service type",
+        }),
+        {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          status: 400,
+        }
+      );
+    }
+
+    // Récupérer l'IP du client et le user agent
+    const clientIP = getClientIP(req);
+    const userAgent = req.headers.get('user-agent') || 'unknown';
+
+    // Initialiser Supabase avec la clé service_role pour bypasser RLS
+    const supabaseUrl = Deno.env.get("SUPABASE_URL");
+    const supabaseServiceKey = Deno.env.get("SUPABASE_SERVICE_ROLE_KEY");
+
+    if (!supabaseUrl || !supabaseServiceKey) {
+      throw new Error("Supabase configuration missing");
+    }
+
+    const supabase = createClient(supabaseUrl, supabaseServiceKey);
+
+    // Vérifier le rate limit via la fonction SQL
+    const { data: rateLimitCheck, error: rateLimitError } = await supabase
+      .rpc('check_quote_rate_limit', {
+        p_ip_address: clientIP,
+        p_email: quoteData.email,
+        p_limit_per_hour: 3,
+        p_limit_per_day: 10
+      });
+
+    if (rateLimitError) {
+      console.error('Rate limit check error:', rateLimitError);
+      // Continue même en cas d'erreur de rate limit (fail open)
+    }
+
+    if (rateLimitCheck === false) {
+      return new Response(
+        JSON.stringify({
+          success: false,
+          error: "Rate limit exceeded. Please try again later.",
+        }),
+        {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          status: 429,
+        }
+      );
+    }
+
+    // Insérer la demande dans la base de données avec IP et user agent
+    const { data: insertData, error: insertError } = await supabase
+      .from('quote_requests')
+      .insert([{
+        ...quoteData,
+        ip_address: clientIP,
+        user_agent: userAgent
+      }])
+      .select()
+      .single();
+
+    if (insertError) {
+      console.error('Database insert error:', insertError);
+      throw new Error(`Database error: ${insertError.message}`);
+    }
+
+    // Envoyer l'email via Resend
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
 
     if (!RESEND_API_KEY) {
-      throw new Error("RESEND_API_KEY is not configured");
+      console.error("RESEND_API_KEY is not configured");
+      // Retourner succès quand même car la demande est dans la DB
+      return new Response(
+        JSON.stringify({ 
+          success: true, 
+          id: insertData.id,
+          warning: "Quote saved but email notification failed"
+        }),
+        {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          status: 200,
+        }
+      );
     }
 
     const emailHTML = createEmailHTML(quoteData);
@@ -171,7 +311,7 @@ Deno.serve(async (req: Request) => {
       reply_to: quoteData.email
     };
 
-    const response = await fetch("https://api.resend.com/emails", {
+    const emailResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -180,24 +320,37 @@ Deno.serve(async (req: Request) => {
       body: JSON.stringify(emailData),
     });
 
-    if (!response.ok) {
-      const errorData = await response.text();
+    if (!emailResponse.ok) {
+      const errorData = await emailResponse.text();
       console.error("Resend API error:", errorData);
-      throw new Error(`Failed to send email: ${response.status} - ${errorData}`);
+      // Retourner succès quand même car la demande est dans la DB
+      return new Response(
+        JSON.stringify({ 
+          success: true, 
+          id: insertData.id,
+          warning: "Quote saved but email notification failed"
+        }),
+        {
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+          status: 200,
+        }
+      );
     }
 
-    const result = await response.json();
+    const emailResult = await emailResponse.json();
 
     return new Response(
-      JSON.stringify({ success: true, messageId: result.id }),
+      JSON.stringify({ 
+        success: true, 
+        id: insertData.id,
+        messageId: emailResult.id 
+      }),
       {
-        headers: {
-          ...corsHeaders,
-          "Content-Type": "application/json",
-        },
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
         status: 200,
       }
     );
+
   } catch (error) {
     console.error("Error in send-quote-email function:", error);
 
@@ -207,10 +360,7 @@ Deno.serve(async (req: Request) => {
         error: error instanceof Error ? error.message : "Unknown error occurred",
       }),
       {
-        headers: {
-          ...corsHeaders,
-          "Content-Type": "application/json",
-        },
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
         status: 500,
       }
     );
