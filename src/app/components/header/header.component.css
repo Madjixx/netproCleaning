@@ -136,6 +136,44 @@ nav a:hover::after {
   transform: rotate(-45deg) translate(7px, -7px);
 }
 
+.language-selector {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.lang-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  background: white;
+  opacity: 0.6;
+}
+
+.lang-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+  border-color: #1DA1F2;
+}
+
+.lang-btn.active {
+  opacity: 1;
+  border-color: #1DA1F2;
+  box-shadow: 0 2px 8px rgba(29, 161, 242, 0.3);
+}
+
+.lang-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
 @media (max-width: 968px) {
   nav {
     display: none;
@@ -148,6 +186,15 @@ nav a:hover::after {
 
   .mobile-menu-btn {
     display: flex;
+  }
+
+  .language-selector {
+    gap: 0.4rem;
+  }
+
+  .lang-btn {
+    width: 28px;
+    height: 28px;
   }
 }
 
@@ -201,5 +248,15 @@ nav a:hover::after {
 
   nav a::after {
     display: none;
+  }
+
+  .language-selector {
+    gap: 0.3rem;
+  }
+
+  .lang-btn {
+    width: 24px;
+    height: 24px;
+    border-width: 1px;
   }
 }

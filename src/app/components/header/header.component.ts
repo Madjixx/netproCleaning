@@ -57,4 +57,21 @@ export class HeaderComponent {
   toggleMobileMenu() {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
+
+  changeLanguage(lang: 'fr' | 'nl' | 'en') {
+    this.translationService.setLanguage(lang);
+  }
+
+  get currentLanguage() {
+    return this.translationService.currentLanguage();
+  }
+
+  getLanguageFlag(lang: string): string {
+    const flags: { [key: string]: string } = {
+      'fr': 'assets/fr.jpg',
+      'nl': 'assets/nl.jpg',
+      'en': 'assets/en.jpg'
+    };
+    return flags[lang] || flags['fr'];
+  }
 }
