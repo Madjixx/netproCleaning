@@ -304,7 +304,7 @@ Deno.serve(async (req: Request) => {
     const emailHTML = createEmailHTML(quoteData);
 
     const emailData = {
-      from: "NetPro Cleaning <onboarding@resend.dev>",
+      from: "NetPro Cleaning <contact@netprocleaning.be>",
       to: ["contact@netprocleaning.be"],
       subject: `Nouvelle demande de devis - ${getServiceTypeLabel(quoteData.service_type)} - ${quoteData.name}`,
       html: emailHTML,
