@@ -15,7 +15,7 @@
               </svg>
             </div>
             <div class="contact-text">
-              <div class="contact-label">{{ translationService.currentLanguage() === 'fr' ? 'Téléphone' : translationService.currentLanguage() === 'en' ? 'Phone' : 'Telefoon' }}</div>
+              <div class="contact-label">{{ translationService.t('contact.phone') }}</div>
               <div class="contact-value">{{ phone }}</div>
             </div>
           </a>
@@ -41,7 +41,7 @@
             </div>
             <div class="contact-text">
               <div class="contact-label">WhatsApp</div>
-              <div class="contact-value">{{ translationService.t('contact.whatsapp') }}</div>
+              <div class="contact-value">{{ translationService.t('contact.whatsapp.label') }}</div>
             </div>
           </a>
 
@@ -53,7 +53,7 @@
               </svg>
             </div>
             <div class="contact-text">
-              <div class="contact-label">{{ translationService.currentLanguage() === 'fr' ? 'Adresse' : translationService.currentLanguage() === 'en' ? 'Address' : 'Adres' }}</div>
+              <div class="contact-label">{{ translationService.t('contact.address') }}</div>
               <div class="contact-value">{{ address }}</div>
             </div>
           </div>

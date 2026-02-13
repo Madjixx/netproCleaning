@@ -108,24 +108,24 @@ export class TranslationService {
       nl: 'Volledige reiniging voor winkels, salons, winkels en professionele ruimtes.'
     },
     'service3.title': {
-      fr: 'Fin de Chantier & Déménagement',
-      en: 'Post-Construction & Moving',
-      nl: 'Na bouw & Verhuizing'
-    },
-    'service3.desc': {
-      fr: "Remise en état approfondie après travaux ou avant état des lieux.",
-      en: 'Thorough restoration after construction or before property inspection.',
-      nl: 'Grondige restauratie na bouwwerkzaamheden of voor inspecties.'
-    },
-    'service4.title': {
       fr: 'Résidentiel de Standing',
       en: 'Premium Residential',
       nl: 'Premium Residentieel'
     },
-    'service4.desc': {
+    'service3.desc': {
       fr: 'Service sur-mesure pour appartements, villas et biens premium.',
       en: 'Tailor-made service for apartments, villas and premium properties.',
       nl: 'Op maat gemaakte service voor appartementen, villa\'s en premium woningen.'
+    },
+    'service4.title': {
+      fr: 'Fin de Chantier & Déménagement',
+      en: 'Post-Construction & Moving',
+      nl: 'Na bouw & Verhuizing'
+    },
+    'service4.desc': {
+      fr: "Remise en état approfondie après travaux ou avant état des lieux.",
+      en: 'Thorough restoration after construction or before property inspection.',
+      nl: 'Grondige restauratie na bouwwerkzaamheden of voor inspecties.'
     },
     'service.cta': {
       fr: 'Demander un devis',
@@ -232,15 +232,15 @@ export class TranslationService {
       en: 'Shops & Establishments',
       nl: 'Winkels & Instellingen'
     },
-    'quote.service.construction': {
-      fr: 'Fin de Chantier & Déménagement',
-      en: 'Post-Construction & Moving',
-      nl: 'Na bouw & Verhuizing'
-    },
     'quote.service.residential': {
       fr: 'Résidentiel de Standing',
       en: 'Premium Residential',
       nl: 'Premium Residentieel'
+    },
+    'quote.service.construction': {
+      fr: 'Fin de Chantier & Déménagement',
+      en: 'Post-Construction & Moving',
+      nl: 'Na bouw & Verhuizing'
     },
     'quote.address': {
       fr: 'Adresse',
@@ -268,9 +268,24 @@ export class TranslationService {
       nl: 'Er is een fout opgetreden. Probeer het opnieuw.'
     },
     'contact.whatsapp': {
-      fr: 'Contactez-nous sur WhatsApp',
-      en: 'Contact us on WhatsApp',
-      nl: 'Neem contact op via WhatsApp'
+      fr: 'Bonjour, je souhaite obtenir plus d\'informations sur vos services de nettoyage.',
+      en: 'Hello, I would like to get more information about your cleaning services.',
+      nl: 'Hallo, ik wil graag meer informatie over uw schoonmaakdiensten.'
+    },
+    'contact.whatsapp.label': {
+      fr: 'Contactez-nous',
+      en: 'Contact us',
+      nl: 'Neem contact op'
+    },
+    'contact.phone': {
+      fr: 'Téléphone',
+      en: 'Phone',
+      nl: 'Telefoon'
+    },
+    'contact.address': {
+      fr: 'Adresse',
+      en: 'Address',
+      nl: 'Adres'
     }
   };
 
