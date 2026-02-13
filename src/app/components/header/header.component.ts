@@ -11,6 +11,7 @@ import { TranslationService } from "../../services/translation.service";
 export class HeaderComponent {
   isScrolled = false;
   isMobileMenuOpen = false;
+  isLanguageDropdownOpen = false;
   logoSrc = "assets/logo.png";
   translationService = inject(TranslationService);
 
@@ -58,8 +59,13 @@ export class HeaderComponent {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
-  changeLanguage(lang: 'fr' | 'nl' | 'en') {
+  toggleLanguageDropdown() {
+    this.isLanguageDropdownOpen = !this.isLanguageDropdownOpen;
+  }
+
+  selectLanguage(lang: 'fr' | 'nl' | 'en') {
     this.translationService.setLanguage(lang);
+    this.isLanguageDropdownOpen = false;
   }
 
   get currentLanguage() {
@@ -73,5 +79,14 @@ export class HeaderComponent {
       'en': 'assets/en.jpg'
     };
     return flags[lang] || flags['fr'];
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+    const languageSelector = target.closest('.language-selector');
+    if (!languageSelector && this.isLanguageDropdownOpen) {
+      this.isLanguageDropdownOpen = false;
+    }
   }
 }
