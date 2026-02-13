@@ -49,7 +49,7 @@ export class SupabaseService {
       this.validateQuoteData(quoteData);
 
       // Appeler l'Edge Function qui gère tout
-      const { data, error } = await this.getClient().functions.invoke('send-quote-email', {
+      const { data, error } = await this.getClient().functions.invoke('hyper-service', {
         body: quoteData
       });
 
