@@ -32,6 +32,11 @@ export class TranslationService {
       en: 'Services',
       nl: 'Diensten'
     },
+    'nav.values': {
+      fr: 'Nos valeurs',
+      en: 'Our Values',
+      nl: 'Onze waarden'
+    },
     'nav.contact': {
       fr: 'Contact',
       en: 'Contact',
@@ -52,6 +57,11 @@ export class TranslationService {
       en: 'Request a quote',
       nl: 'Vraag een offerte aan'
     },
+    'hero.cta-secondary': {
+      fr: 'Contactez-nous',
+      en: 'Contact Us',
+      nl: 'Neem contact op'
+    },
     'about.title': {
       fr: 'Qui sommes-nous',
       en: 'About Us',
@@ -68,9 +78,14 @@ export class TranslationService {
       nl: 'We werken met hoge precisie-eisen om gezonde, goed onderhouden en prestigieuze omgevingen te garanderen.'
     },
     'services.title': {
-      fr: 'Nos Services',
-      en: 'Our Services',
-      nl: 'Onze diensten'
+      fr: 'Des prestations',
+      en: 'Services',
+      nl: 'Diensten'
+    },
+     'services.desc': {
+      fr: 'sur mesure',
+      en: 'custom made',
+      nl: 'op maat gemaakt'
     },
     'service1.title': {
       fr: 'Entreprise & Bureaux',
@@ -111,6 +126,16 @@ export class TranslationService {
       fr: 'Service sur-mesure pour appartements, villas et biens premium.',
       en: 'Tailor-made service for apartments, villas and premium properties.',
       nl: 'Op maat gemaakte service voor appartementen, villa\'s en premium woningen.'
+    },
+    'service.cta': {
+      fr: 'Demander un devis',
+      en: 'Request a quote',
+      nl: 'Vraag een offerte aan'
+    },
+    'service.cta-secondary': {
+      fr: 'Contactez-nous',
+      en: 'Contact Us',
+      nl: 'Neem contact op'
     },
     'values.title': {
       fr: 'Nos Valeurs & Engagements',

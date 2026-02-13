@@ -11,11 +11,11 @@
     </button>
 
     <nav [class.mobile-open]="isMobileMenuOpen">
-      <a (click)="scrollToSection('accueil')">Accueil</a>
-      <a (click)="scrollToSection('services')">Services</a>
-      <a (click)="scrollToSection('valeurs')">Nos valeurs</a>
-      <a (click)="scrollToSection('about')">À propos</a>
-      <a (click)="scrollToSection('contact')">Contact</a>
+      <a (click)="scrollToSection('accueil')">{{ translationService.t('nav.home') }}</a>
+      <a (click)="scrollToSection('services')">{{ translationService.t('nav.services') }}</a>
+      <a (click)="scrollToSection('valeurs')">{{ translationService.t('nav.values') }}</a>
+      <a (click)="scrollToSection('about')">{{ translationService.t('nav.about') }}</a>
+      <a (click)="scrollToSection('contact')">{{ translationService.t('nav.contact') }}</a>
     </nav>
 
     <a href="tel:0477209989" class="phone-btn">
