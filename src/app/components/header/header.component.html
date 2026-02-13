@@ -21,7 +21,7 @@
     <div class="language-selector">
       <button class="lang-dropdown-btn" (click)="toggleLanguageDropdown()">
         <img [src]="getLanguageFlag(currentLanguage)" [alt]="currentLanguage">
-        <span>{{getLanguageFlag(currentLanguage) | uppercase}}</span>
+        <span>{{currentLanguage | uppercase}}</span>
         <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
           <path d="M7 10l5 5 5-5z"/>
         </svg>
