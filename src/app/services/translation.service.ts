@@ -286,6 +286,88 @@ export class TranslationService {
       fr: 'Adresse',
       en: 'Address',
       nl: 'Adres'
+    },
+    
+    // ============================================
+    // NOUVELLES CLÉS POUR LES ERREURS DE VALIDATION
+    // ============================================
+    
+    // Erreurs de validation - champs requis
+    'quote.errors.nameRequired': {
+      fr: 'Le nom est requis',
+      en: 'Name is required',
+      nl: 'Naam is verplicht'
+    },
+    'quote.errors.emailRequired': {
+      fr: "L'email est requis",
+      en: 'Email is required',
+      nl: 'E-mail is verplicht'
+    },
+    'quote.errors.phoneRequired': {
+      fr: 'Le téléphone est requis',
+      en: 'Phone is required',
+      nl: 'Telefoon is verplicht'
+    },
+    'quote.errors.serviceRequired': {
+      fr: 'Le type de service est requis',
+      en: 'Service type is required',
+      nl: 'Servicetype is verplicht'
+    },
+    'quote.errors.addressRequired': {
+      fr: "L'adresse est requise",
+      en: 'Address is required',
+      nl: 'Adres is verplicht'
+    },
+    
+    // Erreurs de validation - format invalide
+    'quote.errors.invalidEmail': {
+      fr: "L'adresse email n'est pas valide",
+      en: 'Email address is not valid',
+      nl: 'E-mailadres is niet geldig'
+    },
+    'quote.errors.phoneInvalid': {
+      fr: 'Le numéro de téléphone doit contenir au moins 9 chiffres',
+      en: 'Phone number must contain at least 9 digits',
+      nl: 'Telefoonnummer moet minimaal 9 cijfers bevatten'
+    },
+    'quote.errors.serviceEmpty': {
+      fr: 'Le type de service ne peut pas être vide',
+      en: 'Service type cannot be empty',
+      nl: 'Servicetype mag niet leeg zijn'
+    },
+    
+    // Erreurs de validation - longueur
+    'quote.errors.nameTooLong': {
+      fr: 'Le nom est trop long (max 100 caractères)',
+      en: 'Name is too long (max 100 characters)',
+      nl: 'Naam is te lang (max 100 tekens)'
+    },
+    'quote.errors.addressTooLong': {
+      fr: "L'adresse est trop longue (max 500 caractères)",
+      en: 'Address is too long (max 500 characters)',
+      nl: 'Adres is te lang (max 500 tekens)'
+    },
+    'quote.errors.messageTooLong': {
+      fr: 'Le message est trop long (max 1000 caractères)',
+      en: 'Message is too long (max 1000 characters)',
+      nl: 'Bericht is te lang (max 1000 tekens)'
+    },
+    
+    // Erreurs serveur
+    'quote.errors.submitFailed': {
+      fr: "Échec de l'envoi de la demande",
+      en: 'Failed to submit quote request',
+      nl: 'Verzenden van offerteaanvraag mislukt'
+    },
+    'quote.errors.rateLimit': {
+      fr: 'Vous avez atteint la limite de demandes. Veuillez réessayer plus tard.',
+      en: 'You have reached the request limit. Please try again later.',
+      nl: 'U heeft de limiet van aanvragen bereikt. Probeer het later opnieuw.'
+    },
+    'quote.errors.missingFields': {
+      fr: 'Veuillez remplir tous les champs obligatoires.',
+      en: 'Please fill in all required fields.',
+      nl: 'Vul alle verplichte velden in.'
     }
   };
 

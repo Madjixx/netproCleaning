@@ -41,7 +41,7 @@ export class ServicesComponent {
   }
 
   contactWhatsApp() {
-    const phone = '32477209989';
+    const phone = '0032477209989';
     const message = encodeURIComponent(this.translationService.t('contact.whatsapp'));
     window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
   }
