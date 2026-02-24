@@ -18,7 +18,7 @@ export class ContactComponent {
   phone = '0477 20 99 89';
   email = 'contact@netprocleaning.be';
   address = 'Rue Pollepelstraat 25, 3300 Tienen, Belgique';
-  whatsappNumber = '0032477209989';
+  whatsappNumber = '+32477209989';
 
   quoteForm = signal<QuoteRequest>({
     name: '',
