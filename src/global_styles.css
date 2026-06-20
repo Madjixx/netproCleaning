@@ -3,7 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   line-height: 1.6;
@@ -11,50 +10,40 @@ body {
   background: #ffffff;
   overflow-x: hidden;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.2;
   font-weight: 700;
 }
-
 img {
   max-width: 100%;
   height: auto;
   display: block;
 }
-
 a {
   color: inherit;
   text-decoration: none;
 }
-
 button {
   font-family: inherit;
   cursor: pointer;
 }
-
 ::-webkit-scrollbar {
   width: 10px;
 }
-
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
-
 ::-webkit-scrollbar-thumb {
-  background: #1DA1F2;
+  background: #5A8C1E;
   border-radius: 5px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
-  background: #0d8bd9;
+  background: #001428;
 }
-
 ::selection {
-  background: #1DA1F2;
+  background: #5A8C1E;
   color: white;
 }

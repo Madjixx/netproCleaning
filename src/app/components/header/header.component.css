@@ -50,7 +50,7 @@ nav {
 }
 
 nav a {
-  color: #333;
+  color: #001428;
   text-decoration: none;
   font-weight: 500;
   font-size: 1rem;
@@ -66,12 +66,12 @@ nav a::after {
   left: 0;
   width: 0;
   height: 2px;
-  background: #1DA1F2;
+  background: #5A8C1E;
   transition: width 0.3s ease;
 }
 
 nav a:hover {
-  color: #1DA1F2;
+  color: #5A8C1E;
 }
 
 nav a:hover::after {
@@ -79,7 +79,7 @@ nav a:hover::after {
 }
 
 .phone-btn {
-  background: #1DA1F2;
+  background: #5A8C1E;
   color: white;
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
@@ -95,9 +95,9 @@ nav a:hover::after {
 }
 
 .phone-btn:hover {
-  background: #1a8fd8;
+  background: #001428;
   transform: translateY(-2px);
-  box-shadow: 0 5px 15px rgba(29, 161, 242, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 20, 40, 0.3);
 }
 
 .phone-btn svg {
@@ -155,8 +155,8 @@ nav a:hover::after {
 }
 
 .lang-dropdown-btn:hover {
-  border-color: #1DA1F2;
-  box-shadow: 0 2px 8px rgba(29, 161, 242, 0.2);
+  border-color: #5A8C1E;
+  box-shadow: 0 2px 8px rgba(90, 140, 30, 0.2);
 }
 
 .lang-dropdown-btn img {

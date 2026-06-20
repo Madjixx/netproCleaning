@@ -35,7 +35,7 @@ export class HeaderComponent {
   updateLogo() {
     if (typeof window !== "undefined") {
       this.logoSrc =
-        window.innerWidth < 768 ? "assets/logo2.png" : "assets/logo.png";
+        window.innerWidth < 768 ? "assets/logo-1.jpeg" : "assets/logo.png";
     }
   }
 
@@ -44,7 +44,7 @@ export class HeaderComponent {
     if (event) {
       console.error("Image error event:", event);
     }
-    this.logoSrc = "assets/logo2.png";
+    this.logoSrc = "assets/logo-1.jpeg";
   }
 
   scrollToSection(sectionId: string) {

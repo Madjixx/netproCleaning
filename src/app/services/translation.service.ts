@@ -48,9 +48,9 @@ export class TranslationService {
       nl: 'Uitmuntendheid in reiniging voor al uw ruimtes'
     },
     'hero.subtitle': {
-      fr: 'Que vous soyez un professionnel, un commerçant ou un particulier, NetPro Cleaning apporte la rigueur du luxe à chaque mission.',
-      en: 'Whether you are a professional, merchant or individual, NetPro Cleaning brings luxury standards to every mission.',
-      nl: 'Of u nu een professional, handelaar of particulier bent, NetPro Cleaning brengt luxestandaarden naar elke opdracht.'
+      fr: 'Que vous soyez un professionnel, un commerçant ou un particulier, NETPRO CLEANING apporte la rigueur du luxe à chaque mission.',
+      en: 'Whether you are a professional, merchant or individual, NETPRO CLEANING brings luxury standards to every mission.',
+      nl: 'Of u nu een professional, handelaar of particulier bent, NETPRO CLEANING brengt luxestandaarden naar elke opdracht.'
     },
     'hero.cta': {
       fr: 'Demander un devis',
@@ -68,9 +68,9 @@ export class TranslationService {
       nl: 'Over ons'
     },
     'about.text1': {
-      fr: "NetPro Cleaning est née d'une ambition simple : redéfinir les standards de la propreté en apportant la rigueur du luxe à tous les types d'espaces.",
-      en: 'NetPro Cleaning was born from a simple ambition: to redefine cleanliness standards by bringing luxury rigor to all types of spaces.',
-      nl: 'NetPro Cleaning is geboren uit een eenvoudige ambitie: reinigingsnormen herdefiniëren door luxe precisie naar alle soorten ruimtes te brengen.'
+      fr: "NETPRO CLEANING est née d'une ambition simple : redéfinir les standards de la propreté en apportant la rigueur du luxe à tous les types d'espaces.",
+      en: 'NETPRO CLEANING was born from a simple ambition: to redefine cleanliness standards by bringing luxury rigor to all types of spaces.',
+      nl: 'NETPRO CLEANING is geboren uit een eenvoudige ambitie: reinigingsnormen herdefiniëren door luxe precisie naar alle soorten ruimtes te brengen.'
     },
     'about.text2': {
       fr: "Nous intervenons avec une exigence de haute précision afin de garantir des environnements sains, soignés et prestigieux.",

@@ -20,8 +20,8 @@
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
       :root {
-        --blue:  #1DA1F2;
-        --green: #1F9D55;
+        --blue:  #001428;
+        --green: #5A8C1E;
         --white: #f0faff;
         --bg:    #04111c;
       }
@@ -49,8 +49,8 @@
       .nl-bg {
         position: absolute; inset: 0;
         background:
-          radial-gradient(ellipse 80% 60% at 10% 90%, rgba(31,157,85,.2)   0%, transparent 55%),
-          radial-gradient(ellipse 70% 50% at 90% 10%, rgba(29,161,242,.22) 0%, transparent 55%),
+          radial-gradient(ellipse 80% 60% at 10% 90%, rgba(90,140,30,.2)   0%, transparent 55%),
+          radial-gradient(ellipse 70% 50% at 90% 10%, rgba(0,20,40,.22) 0%, transparent 55%),
           radial-gradient(ellipse 50% 50% at 50% 50%, rgba(13,60,90,.6)    0%, transparent 70%),
           var(--bg);
         animation: nlBgBreath 6s ease-in-out infinite alternate;
@@ -70,10 +70,10 @@
       /* ── RIPPLES ─────────────────────────────── */
       .nl-ripple-wrap { position:absolute; top:50%; left:50%; pointer-events:none; }
       .nl-ripple { position:absolute; border-radius:50%; transform:translate(-50%,-50%) scale(0); animation:nlRipple 5s ease-out infinite; }
-      .nl-ripple:nth-child(1){ width:220px; height:220px; border:1px solid rgba(29,161,242,.28); animation-delay:0s; }
-      .nl-ripple:nth-child(2){ width:340px; height:340px; border:1px solid rgba(31,157,85,.22);  animation-delay:1.2s; }
-      .nl-ripple:nth-child(3){ width:460px; height:460px; border:1px solid rgba(29,161,242,.16); animation-delay:2.4s; }
-      .nl-ripple:nth-child(4){ width:580px; height:580px; border:1px solid rgba(31,157,85,.1);   animation-delay:3.6s; }
+      .nl-ripple:nth-child(1){ width:220px; height:220px; border:1px solid rgba(0,20,40,.28);    animation-delay:0s; }
+      .nl-ripple:nth-child(2){ width:340px; height:340px; border:1px solid rgba(90,140,30,.22);  animation-delay:1.2s; }
+      .nl-ripple:nth-child(3){ width:460px; height:460px; border:1px solid rgba(0,20,40,.16);    animation-delay:2.4s; }
+      .nl-ripple:nth-child(4){ width:580px; height:580px; border:1px solid rgba(90,140,30,.1);   animation-delay:3.6s; }
       @keyframes nlRipple {
         0%  { transform:translate(-50%,-50%) scale(0); opacity:1; }
         100%{ transform:translate(-50%,-50%) scale(1); opacity:0; }
@@ -108,13 +108,13 @@
 
       .nl-icon-glow {
         position:absolute; inset:6px; border-radius:50%;
-        background:radial-gradient(circle,rgba(29,161,242,.12),rgba(31,157,85,.1));
+        background:radial-gradient(circle,rgba(0,20,40,.12),rgba(90,140,30,.1));
       }
 
       .nl-icon-wrap svg {
         position:absolute; inset:0; margin:auto;
         width:48px; height:48px;
-        filter:drop-shadow(0 0 14px rgba(29,161,242,.6));
+        filter:drop-shadow(0 0 14px rgba(0,20,40,.6));
       }
 
       /* ── TEXTE ───────────────────────────────── */
@@ -133,7 +133,7 @@
         color:var(--white);
         text-align:center;
       }
-      .nl-brand .nl-blue  { color:var(--blue);  }
+      .nl-brand .nl-blue  { color:var(--white);  }
       .nl-brand .nl-green { color:var(--green); }
 
       .nl-tagline {
@@ -146,7 +146,7 @@
       .nl-divider {
         width:0; height:2px; margin:24px auto; border-radius:2px;
         background:linear-gradient(90deg,var(--blue),var(--green));
-        box-shadow:0 0 14px rgba(29,161,242,.45);
+        box-shadow:0 0 14px rgba(0,20,40,.45);
         animation:nlGrow 1s ease .95s forwards;
       }
       @keyframes nlGrow { to{ width:190px; } }
@@ -168,7 +168,7 @@
       .nl-fill {
         height:100%; width:0%; border-radius:99px;
         background:linear-gradient(90deg,var(--blue),var(--green));
-        box-shadow:0 0 16px rgba(29,161,242,.7);
+        box-shadow:0 0 16px rgba(0,20,40,.7);
         transition:width .05s linear; position:relative;
       }
       .nl-fill::after {
@@ -176,10 +176,10 @@
         transform:translateY(-50%);
         width:9px; height:9px; border-radius:50%;
         background:#fff;
-        box-shadow:0 0 8px var(--blue),0 0 18px var(--blue);
+        box-shadow:0 0 8px var(--green),0 0 18px var(--green);
       }
       .nl-progress-info { display:flex; justify-content:space-between; margin-top:10px; }
-      .nl-pct  { font-size:.75rem; font-weight:700; color:var(--blue); letter-spacing:.05em; }
+      .nl-pct  { font-size:.75rem; font-weight:700; color:var(--green); letter-spacing:.05em; }
       .nl-step { font-size:.62rem; color:rgba(160,210,240,.4); letter-spacing:.1em; }
     </style>
   </head>
@@ -209,16 +209,16 @@
           <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="nlDrop" x1="28" y1="18" x2="72" y2="80" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#1DA1F2"/>
-                <stop offset="1" stop-color="#1F9D55"/>
+                <stop stop-color="#001428"/>
+                <stop offset="1" stop-color="#5A8C1E"/>
               </linearGradient>
             </defs>
             <path d="M50 18 C50 18 28 42 28 57 C28 69.6 37.9 80 50 80 C62.1 80 72 69.6 72 57 C72 42 50 18 50 18Z" fill="url(#nlDrop)" opacity=".92"/>
             <path d="M38 53 C38 53 38 45 44 40" stroke="white" stroke-width="2.5" stroke-linecap="round" opacity=".45"/>
-            <path d="M75 20 L76.4 25 L81 26 L76.4 27 L75 32 L73.6 27 L69 26 L73.6 25Z" fill="#1DA1F2" opacity=".8"/>
-            <path d="M22 50 L23 54 L27 55 L23 56 L22 60 L21 56 L17 55 L21 54Z" fill="#1F9D55" opacity=".7"/>
-            <circle cx="80" cy="58" r="2" fill="#1DA1F2" opacity=".55"/>
-            <circle cx="24" cy="34" r="1.5" fill="#1F9D55" opacity=".6"/>
+            <path d="M75 20 L76.4 25 L81 26 L76.4 27 L75 32 L73.6 27 L69 26 L73.6 25Z" fill="#001428" opacity=".8"/>
+            <path d="M22 50 L23 54 L27 55 L23 56 L22 60 L21 56 L17 55 L21 54Z" fill="#5A8C1E" opacity=".7"/>
+            <circle cx="80" cy="58" r="2" fill="#001428" opacity=".55"/>
+            <circle cx="24" cy="34" r="1.5" fill="#5A8C1E" opacity=".6"/>
           </svg>
         </div>
 
@@ -254,7 +254,7 @@
       /* ── Bulles ─────────────────────────────── */
       (function() {
         const wrap   = document.getElementById('nlBubbles');
-        const colors = ['rgba(29,161,242,.35)','rgba(31,157,85,.3)','rgba(29,161,242,.18)','rgba(31,157,85,.18)'];
+        const colors = ['rgba(0,20,40,.35)','rgba(90,140,30,.3)','rgba(0,20,40,.18)','rgba(90,140,30,.18)'];
         for (let i = 0; i < 30; i++) {
           const b = document.createElement('div');
           b.className = 'nl-bubble';
@@ -287,7 +287,7 @@
                  : nlProgress < 80 ? 0.7 + Math.random()*0.8
                  :                    0.25 + Math.random()*0.35;
 
-        nlProgress = Math.min(nlProgress + sp, 99); /* s'arrête à 99% — Angular finit */
+        nlProgress = Math.min(nlProgress + sp, 99);
         nlBar.style.width = nlProgress + '%';
         nlPct.textContent = Math.floor(nlProgress) + '%';
 
@@ -296,14 +296,12 @@
       }, 55);
 
       /* ── Angular signale qu'il est prêt ─────── */
-      /* Dès que <app-root> reçoit du contenu, on termine */
       const observer = new MutationObserver(() => {
         const appRoot = document.querySelector('app-root');
         if (appRoot && appRoot.children.length > 0) {
           observer.disconnect();
           clearInterval(nlIv);
 
-          /* Sauter à 100% */
           nlProgress = 100;
           nlBar.style.width = '100%';
           nlPct.textContent = '100%';

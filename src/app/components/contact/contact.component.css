@@ -24,7 +24,7 @@
 .title-underline {
   width: 80px;
   height: 4px;
-  background: #2E8B57;
+  background: #5A8C1E;
   margin: 0 auto;
   border-radius: 2px;
 }
@@ -45,7 +45,7 @@
 .contact-person {
   text-align: center;
   padding: 2rem;
-  background: #1DA1F2;
+  background: #001428;
   border-radius: 16px;
   color: white;
 }
@@ -92,7 +92,7 @@
 .contact-icon {
   width: 50px;
   height: 50px;
-  background: #1DA1F2;
+  background: #5A8C1E;
   border-radius: 12px;
   display: flex;
   align-items: center;
@@ -181,7 +181,7 @@
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #2E8B57;
+  border-color: #5A8C1E;
   background: white;
 }
 
@@ -193,7 +193,7 @@
 .submit-btn {
   width: 100%;
   padding: 1rem 2rem;
-  background: #2E8B57;
+  background: #5A8C1E;
   color: white;
   border: none;
   border-radius: 12px;
@@ -206,7 +206,7 @@
 
 .submit-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(46, 139, 87, 0.3);
+  box-shadow: 0 10px 30px rgba(90, 140, 30, 0.3);
 }
 
 .submit-btn:disabled {

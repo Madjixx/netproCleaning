@@ -122,8 +122,8 @@
 }
 
 .cta-button.primary {
-  background: #1DA1F2;
-  color:white;
+  background: #5A8C1E;
+  color: white;
   border: none;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
@@ -132,18 +132,18 @@
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
   background: #f8f9fa;
-  color: #1DA1F2;
+  color: #5A8C1E;
 }
 
 .cta-button.secondary {
-  background: #1F9D55;
+  background: #001428;
   color: white;
   border: 2px solid rgba(255, 255, 255, 0.8);
   padding: 0.7rem 2.5rem !important;
 }
 
 .cta-button.secondary:hover {
-  background: #1F9D55;
+  background: #001428;
   border-color: white;
   transform: translateY(-2px);
 }
