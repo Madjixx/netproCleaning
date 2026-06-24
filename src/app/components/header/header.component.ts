@@ -12,7 +12,7 @@ export class HeaderComponent {
   isScrolled = false;
   isMobileMenuOpen = false;
   isLanguageDropdownOpen = false;
-  logoSrc = "assets/logo.png";
+  logoSrc = "assets/logo-v2.png";
   translationService = inject(TranslationService);
 
   constructor() {
@@ -35,7 +35,7 @@ export class HeaderComponent {
   updateLogo() {
     if (typeof window !== "undefined") {
       this.logoSrc =
-        window.innerWidth < 768 ? "assets/logo-1.jpeg" : "assets/logo.png";
+        window.innerWidth < 768 ? "assets/logo-1.jpeg" : "assets/logo-v2.png";
     }
   }
 
